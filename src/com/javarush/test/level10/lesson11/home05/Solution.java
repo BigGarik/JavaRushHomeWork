@@ -42,16 +42,6 @@ public class Solution
 
 
         //напишите тут ваш код
-        for (Character aAlphabet:alphabet)
-        {
-            int count = 0;
-            String symbol = aAlphabet.toString();
-            for (String aList : list)
-            {
-                count += (aList + "\0").split(symbol).length - 1;
-            }
-            System.out.println(symbol + " " + count);
-        }
     }
 
 }
