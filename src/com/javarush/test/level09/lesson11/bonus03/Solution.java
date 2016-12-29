@@ -51,7 +51,50 @@ public class Solution
     public static void sort(String[] array)
     {
         //напишите тут ваш код
+        for (int i = 0; i < array.length; i++)
+        {
+                if (isNumber(array[i])){
+                    int max = Integer.parseInt(array[i]);
+                    int max_i = i;
 
+                    for (int j = i+1; j < array.length; j++)
+                    {
+                        if (isNumber(array[j]) && Integer.parseInt(array[j]) > max)
+                        {
+                            max = Integer.parseInt(array[j]);
+                            max_i = j;
+                        }
+                    }
+                    if (i != max_i)
+                    {
+                        String tmp = array[i];
+                        array[i] = array[max_i];
+                        array[max_i] = tmp;
+                    }
+                }
+
+                else
+                {
+                    String min = array[i];
+                    int max_i = i;
+
+                    for (int j = i+1; j < array.length; j++)
+                    {
+                        if (!isNumber(array[j]) && isGreaterThan(min, array[j]))
+                        {
+                            min = array[j];
+                            max_i = j;
+                        }
+                    }
+                    if (i != max_i)
+                    {
+                        String tmp = array[i];
+                        array[i] = array[max_i];
+                        array[max_i] = tmp;
+                    }
+
+                }
+        }
     }
 
     //Метод для сравнения строк: 'а' больше чем 'b'
