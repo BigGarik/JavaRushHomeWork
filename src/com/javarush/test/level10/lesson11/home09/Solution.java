@@ -38,6 +38,7 @@ public class Solution
     {
         HashMap<String, Integer> result = new HashMap<String, Integer>();
 
+        //напишите тут ваш код
         for (int i = 0; i < list.size()-1; i++)
         {
             int count = 0;
