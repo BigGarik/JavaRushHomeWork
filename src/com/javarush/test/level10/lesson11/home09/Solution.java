@@ -39,12 +39,19 @@ public class Solution
         HashMap<String, Integer> result = new HashMap<String, Integer>();
 
         //напишите тут ваш код
-        for (int i = 0; i < list.size()-1; i++)
+        for (int i = 0; i < list.size(); i++) // перебираем слова в листе
         {
-            int count = 0;
-            for (int j = i+1; j < list.size(); j++)
+            if (!result.containsKey(list.get(i)))
             {
-
+                int count = 1;
+                result.put(list.get(i), count);
+                for (int j = list.size()-1; j > i; j--) // перебираем лист до выбранного элемента
+                {
+                    if (list.get(i).contains(list.get(j))){
+                        count +=1;
+                        result.put(list.get(i), count);
+                    }
+                }
             }
         }
 
